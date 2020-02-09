@@ -8,10 +8,10 @@ app-migration-toolkit: App-migration-toolkit
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.app-migration-toolkit](https://galaxy.ansible.com/devops-toolbox.app-migration-toolkit)
+[https://galaxy.ansible.com/devopstoolbox.app-migration-toolkit](https://galaxy.ansible.com/devopstoolbox.app-migration-toolkit)
 
 ```bash
-ansible-galaxy install devops-toolbox.app-migration-toolkit
+ansible-galaxy install devopstoolbox.app-migration-toolkit
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: app-migration-toolkit is configured
       import_role:
-        name: devops-toolbox.app-migration-toolkit
+        name: devopstoolbox.app-migration-toolkit
       vars:
         app-migration-toolkit_packages_state: present
         app-migration-toolkit_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
