@@ -1,0 +1,19 @@
+---
+# defaults file for app-migration-toolkit
+
+app-migration-toolkit_packages_state: present
+app-migration-toolkit_remove_packages: true
+app-migration-toolkit_enable_service: true
+app-migration-toolkit_enable_selinux: true
+app-migration-toolkit_copy_templates: true
+app-migration-toolkit_firewall_configure: true
+app-migration-toolkit_firewall_rules:
+  - service: ssh
+  - port: 3389
+app-migration-toolkit_users:
+  - user: devops
+    group: docker
+app-migration-toolkit_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true

@@ -1,0 +1,11 @@
+---
+# Configure app-migration-toolkit
+
+- name: service is enabled and started
+  service:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  become: true
+  loop: "{{ app-migration-toolkit_services_enable }}"
+  when: app-migration-toolkit_enable_service

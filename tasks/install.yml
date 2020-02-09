@@ -1,0 +1,27 @@
+---
+# Install app-migration-toolkit packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ app-migration-toolkit_packages_remove }}"
+    state: absent
+  become: true
+  when: app-migration-toolkit_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ app-migration-toolkit_packages_repos }}"
+    state: "{{ app-migration-toolkit_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ app-migration-toolkit_packages_prereq }}"
+    state: "{{ app-migration-toolkit_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ app-migration-toolkit_packages_install }}"
+    state: "{{ app-migration-toolkit_packages_state }}"
+  become: true

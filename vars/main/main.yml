@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+app-migration-toolkit_repos_create: "{{ _app-migration-toolkit_repos_create['all']
+  | union ( _app-migration-toolkit_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+app-migration-toolkit_repos_download: "{{ _app-migration-toolkit_repos_download['all']
+  | union ( _app-migration-toolkit_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+app-migration-toolkit_templates_copy: "{{ _app-migration-toolkit_templates_copy['all']
+  | union ( _app-migration-toolkit_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+app-migration-toolkit_services_enable: "{{ _app-migration-toolkit_services_enable['all']
+  | union ( _app-migration-toolkit_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+app-migration-toolkit_selinux_enable: "{{ _app-migration-toolkit_selinux_enable['all']
+  | union ( _app-migration-toolkit_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+app-migration-toolkit_packages_remove: "{{ _app-migration-toolkit_packages_remove['all']
+  | union ( _app-migration-toolkit_packages_remove[my_os]
+  | default([]) ) }}"
+app-migration-toolkit_packages_repos: "{{ _app-migration-toolkit_packages_repos['all']
+  | union ( _app-migration-toolkit_packages_repos[my_os]
+  | default([]) ) }}"
+app-migration-toolkit_packages_prereq: "{{ _app-migration-toolkit_packages_prereq['all']
+  | union ( _app-migration-toolkit_packages_prereq[my_os]
+  | default([]) ) }}"
+app-migration-toolkit_packages_install: "{{ _app-migration-toolkit_packages_install['all']
+  | union ( _app-migration-toolkit_packages_install[my_os]
+  | default([]) ) }}"
